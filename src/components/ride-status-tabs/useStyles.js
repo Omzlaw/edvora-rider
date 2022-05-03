@@ -1,6 +1,5 @@
 export const useStyles = {
     root: {
-        width: "100%",
         margin: "31px 0 30px 34px",
     },
     tabs: {
@@ -11,5 +10,9 @@ export const useStyles = {
         '& .Mui-selected': {
             color: '#ffffff !important',
         },
+    },
+
+    tabPanel: {
+        margin: "24px 43px 24px 0px",
     }
 }
