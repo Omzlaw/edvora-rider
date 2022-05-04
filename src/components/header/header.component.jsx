@@ -6,17 +6,12 @@ import { useStyles } from './useStyles';
 import HeaderUserDetails from '../header-user-details/header-user-details.component';
 
 const Header = () => {
-    const user = {
-        station_code: 69,
-        name: 'John Doe',
-        url: 'https://picsum.photos/200'
-    };
 
     return (
         <Box sx={useStyles.root}>
             <Grid container direction="row" justifyContent="space-between" alignItems="center">
                 <Grid item><Typography sx={useStyles.logo}>Edvora</Typography></Grid>
-                <Grid item><HeaderUserDetails user={user}  /></Grid>
+                <Grid item><HeaderUserDetails /></Grid>
             </Grid>
         </Box>
     )

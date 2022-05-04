@@ -13,6 +13,11 @@ export const useStyles = {
     },
 
     tabPanel: {
-        margin: "24px 43px 24px 0px",
+        height: '30em',
+        margin: "24px 52px 30px 16px",
+        overflow: 'auto',
+        '::-webkit-scrollbar': {
+            display: 'none',
+        },
     }
 }

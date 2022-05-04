@@ -4,8 +4,12 @@ import Typography from "@mui/material/Typography";
 import { useStyles } from "./useStyles";
 import Image from "next/image";
 
-const HeaderUserDetails = ({ user }) => {
-  const { name, url } = user;
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from "../../redux/user/user.selector";
+
+const HeaderUserDetails = ({ currentUser }) => {
+  const { name, url } = currentUser;
   return (
     <Box>
       <Grid container direction="row" alignItems="center">
@@ -22,4 +26,12 @@ const HeaderUserDetails = ({ user }) => {
   );
 };
 
-export default HeaderUserDetails;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(HeaderUserDetails);
+

@@ -43,6 +43,7 @@ const RideStatusTabs = () => {
       <Tabs
         value={value}
         onChange={handleChange}
+        scrollButtons="auto"
         TabIndicatorProps={{
           sx: {
             backgroundColor: "#fff",
@@ -56,15 +57,17 @@ const RideStatusTabs = () => {
         <Tab {...a11yProps(1)} label="Upcoming rides" />
         <Tab {...a11yProps(2)} label="Past rides" />
       </Tabs>
-      <TabPanel value={value} index={0}>
-        <NearestRides />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <UpcomingRides />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <PastRides />
-      </TabPanel>
+      <Box sx={useStyles.tabPanel}>
+        <TabPanel value={value} index={0}>
+          <NearestRides />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <UpcomingRides />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <PastRides />
+        </TabPanel>
+      </Box>
     </Box>
   );
 };
