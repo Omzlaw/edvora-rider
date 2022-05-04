@@ -15,8 +15,30 @@ export const useStyles = {
     },
     mapBox: {
         marginRight: '44px',
+        marginBottom: '20px',
     },
     map: {
         borderRadius: '5px',
     },
+
+    details: {
+        '& .MuiGrid-root': {
+            marginBottom: '8px',
+        }
+    },
+
+    city: {
+        background: '#000000',
+        borderRadius: '5px',
+        padding: '10px',
+        marginRight: '10px',
+        marginTop: '15px',
+    },
+
+    state: {
+        background: '#000000',
+        borderRadius: '5px',
+        padding: '10px',
+        marginTop: '15px',
+    }
 }

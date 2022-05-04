@@ -35,10 +35,10 @@ const RideDetailCard = ({ ride }) => {
             </Grid>
             <Grid item>
               <Grid container>
-                <Box>
+                <Box sx={useStyles.details}>
                   <Grid item>Ride Id: {id}</Grid>
                   <Grid item>Origin Station: {origin_station_code}</Grid>
-                  <Grid item>Station path: {station_path}</Grid>
+                  <Grid item>Station path: {"[" + station_path.toString() + "]"}</Grid>
                   <Grid item>Date: {date}</Grid>
                   <Grid item>Distance: {distance}</Grid>
                 </Box>
@@ -47,8 +47,14 @@ const RideDetailCard = ({ ride }) => {
           </Grid>
         </Grid>
         <Grid item>
-            <Box>{city}</Box>
-            <Box>{state}</Box>
+          <Grid container direction="row">
+            <Grid item>
+              <Box sx={useStyles.city}>{city}</Box>
+            </Grid>
+            <Grid item>
+              <Box sx={useStyles.state}>{state}</Box>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Box>

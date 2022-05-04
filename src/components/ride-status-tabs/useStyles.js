@@ -12,8 +12,13 @@ export const useStyles = {
         },
     },
 
+    filter: {
+        margin: "12px 52px 0px 16px",
+        cursor: 'pointer',
+    },
+
     tabPanel: {
-        height: '30em',
+        height: '35em',
         margin: "24px 52px 30px 16px",
         overflow: 'auto',
         '::-webkit-scrollbar': {
