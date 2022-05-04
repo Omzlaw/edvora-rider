@@ -12,9 +12,9 @@ import Dropdown from "../dropdown/dropdown.component";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectRideCollection } from "../../redux/ride/ride.selector";
-import { selectAllStates, selectAllCities } from "../../redux/ride/ride.utils";
+import { selectCityCollection, selectStateCollection } from "../../redux/filter/filter.selector";
 
-const Filters = ({rides}) => {
+const Filters = ({rides, states, cities}) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -23,9 +23,6 @@ const Filters = ({rides}) => {
 
   const open = Boolean(anchorEl);
   const id = open ? "filter-popper" : undefined;
-
-  const states = selectAllStates(rides);
-  const cities = selectAllCities(rides);
 
   return (
     <Box sx={useStyles.root}>
@@ -62,6 +59,8 @@ const Filters = ({rides}) => {
 
 const mapStateToProps = createStructuredSelector({
   rides: selectRideCollection,
+  states: selectStateCollection,
+  cities: selectCityCollection
 });
 
 export default connect(mapStateToProps, null)(Filters);

@@ -5,12 +5,15 @@ import RideStatusTabs from '../../components/ride-status-tabs/ride-status-tabs.c
 
 import { setCurrentUser } from '../../redux/user/user.actions';
 import { setRides } from '../../redux/ride/ride.actions';
+import { setStates, setCities } from '../../redux/filter/filter.actions';
 import { connect } from 'react-redux';
 
 
-const Home = ({user, rides, setCurrentUser, setRides}) => {
+const Home = ({user, rides, setCurrentUser, setRides, setStates, setCities}) => {
   setCurrentUser(user);
   setRides(rides);
+  setStates(rides);
+  setCities(rides);
   return (
     <Box>
       <Header />
@@ -22,6 +25,8 @@ const Home = ({user, rides, setCurrentUser, setRides}) => {
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user)),
   setRides: rides => dispatch(setRides(rides)),
+  setStates: rides => dispatch(setStates(rides)),
+  setCities: rides => dispatch(setCities(rides)),
 });
 
 export default connect(null, mapDispatchToProps)(Home);

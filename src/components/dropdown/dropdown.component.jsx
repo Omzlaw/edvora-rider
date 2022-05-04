@@ -17,10 +17,10 @@ const Dropdown = ({ name, values }) => {
   return (
     <Box sx={useStyles.root}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">{name}</InputLabel>
+        <InputLabel id="filter-select-label">{name}</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
+          labelId="filter-select-label"
+          id="filter-select"
           value={value}
           label={name}
           onChange={handleChange}
