@@ -11,7 +11,9 @@ export const useStyles = {
         borderRadius: '15px',
         padding: '23px 30px 23px 30px',
         color: '#ffffff',
-        overflowY: 'auto', 
+        overflowY: 'auto',
+        display: 'flex',
+        overflow: 'wrap',
 
         '::-webkit-scrollbar': {
             display: 'none',

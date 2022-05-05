@@ -18,7 +18,7 @@ export const useStyles = {
     },
 
     tabPanel: {
-        height: '35em',
+        height: '35rem',
         margin: "24px 52px 30px 16px",
         overflow: 'auto',
         '::-webkit-scrollbar': {

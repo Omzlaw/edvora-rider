@@ -65,7 +65,7 @@ const Dropdown = ({
 
   return (
     <Box sx={useStyles.root}>
-      <FormControl fullWidth>
+      <FormControl sx={{ width: '20ch' }}>
         <InputLabel id="filter-select-label">{name}</InputLabel>
         <Select
           labelId="filter-select-label"
