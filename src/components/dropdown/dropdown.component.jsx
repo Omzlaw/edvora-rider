@@ -8,7 +8,6 @@ import Select from "@mui/material/Select";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import {
-  selectFilteredRideCollection,
   selectRideCollection,
 } from "../../redux/ride/ride.selector";
 import { setFilteredRides } from "../../redux/ride/ride.actions";
@@ -18,18 +17,24 @@ import {
 } from "../../redux/ride/ride.utils";
 
 import { useStyles } from "./useStyles";
-import { setCities } from "../../redux/filter/filter.actions";
+import {
+  setCities,
+  setCurrentCity,
+  setCurrentState,
+} from "../../redux/filter/filter.actions";
+import { selectCurrentState } from "../../redux/filter/filter.selector";
 
 const Dropdown = ({
   name,
   values,
   rides,
-  filteredRides,
   setFilteredRides,
   setCities,
+  setCurrentCity,
+  setCurrentState,
+  selectedState
 }) => {
   const [value, setValue] = useState("");
-  const selectInput = useRef(null);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -48,12 +53,14 @@ const Dropdown = ({
     const filteredRidesByState = filterRidesByState(rides, value);
     setFilteredRides(filteredRidesByState);
     setCities(filteredRidesByState);
+    setCurrentState(value);
   };
 
-  const cityChange = (value, stateValue) => {
-    const filteredRidesByState = filterRidesByState(rides, stateValue);
+  const cityChange = (value) => {
+    const filteredRidesByState = filterRidesByState(rides, selectedState);
     const filteredRidesByCity = filterRidesByCity(filteredRidesByState, value);
     setFilteredRides(filteredRidesByCity);
+    setCurrentCity(value);
   };
 
   return (
@@ -67,7 +74,6 @@ const Dropdown = ({
           label={name}
           name={name}
           onChange={handleChange}
-          ref={selectInput}
         >
           <MenuItem value={name}>{name}</MenuItem>
           {values.map((val, index) => (
@@ -83,11 +89,14 @@ const Dropdown = ({
 
 const mapStateToProps = createStructuredSelector({
   rides: selectRideCollection,
+  selectedState: selectCurrentState,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setFilteredRides: (rides) => dispatch(setFilteredRides(rides)),
   setCities: (rides) => dispatch(setCities(rides)),
+  setCurrentCity: (city) => dispatch(setCurrentCity(city)),
+  setCurrentState: (state) => dispatch(setCurrentState(state)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dropdown);

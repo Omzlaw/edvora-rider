@@ -5,6 +5,8 @@ from "./filter.types";
 const INITIAL_STATE = {
     stateCollection: [],
     cityCollection: [],
+    selectedState: "State",
+    selectedCity: "City",
 }
 
 const filterReducer = (state = INITIAL_STATE, action) => {
@@ -19,10 +21,15 @@ const filterReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 cityCollection: action.payload,
             };
-        case FilterActionTypes.FILTER_CITY_BY_STATE:
+        case FilterActionTypes.SET_CURRENT_STATE:
             return {
                 ...state,
-                cityCollection: action.payload,
+                selectedState: action.payload,
+            };
+        case FilterActionTypes.SET_CURRENT_CITY:
+            return {
+                ...state,
+                selectedCity: action.payload,
             };
 
         default:
