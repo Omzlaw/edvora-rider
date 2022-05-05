@@ -1,4 +1,4 @@
-import { filteredRidesByState } from "../ride/ride.utils";
+import { filterRidesByState } from "../ride/ride.utils";
 
 export const selectAllStates = (rides) => {
     const allStates = rides.reduce((acc, ride) => {
@@ -22,8 +22,8 @@ export const selectAllCities = (rides) => {
     return allCities;
 }
 
-export const filteredCitiesByState = (rides, state) => {
-    const filteredByStates = filteredRidesByState(rides, state);
+export const filterCitiesByState = (rides, state) => {
+    const filteredByStates = filterRidesByState(rides, state);
     const filteredCities = selectAllCities(filteredByStates);
     return filteredCities;
 }

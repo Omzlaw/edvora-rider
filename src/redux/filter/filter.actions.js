@@ -1,14 +1,14 @@
 import  FilterActionTypes  from "./filter.types"
 import {selectAllStates, selectAllCities, filteredCitiesByState} from "./filter.utils";
 
-export const setStates = stateCollection => ({
+export const setStates = rideCollection => ({
     type: FilterActionTypes.SET_STATES,
-    payload: selectAllStates(stateCollection),
+    payload: selectAllStates(rideCollection),
 });
 
-export const setCities = cityCollection => ({
+export const setCities = rideCollection => ({
     type: FilterActionTypes.SET_CITIES,
-    payload: selectAllCities(cityCollection),
+    payload: selectAllCities(rideCollection),
 });
 
 export const filteredCities = (rides, currentState) => ({

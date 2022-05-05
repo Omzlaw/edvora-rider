@@ -27,12 +27,18 @@ const addDistanceKeyToRides = (rides, userStationCode) => {
     return ridesWithDistance;
 };
 
-export const filteredRidesByState = (rides, state) => {
+export const filterRidesByState = (rides, state) => {
+    if(state === 'State') {
+        return rides;
+    }
     const filteredRides = rides.filter(ride => ride.state === state);
     return filteredRides;
 }
 
-export const filteredRidesByCity = (rides, city) => {
+export const filterRidesByCity = (rides, city) => {
+    if(city === 'City') {
+        return rides;
+    }
     const filteredRides = rides.filter(ride => ride.city === city);
     return filteredRides;
 }

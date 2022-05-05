@@ -1,6 +1,10 @@
+
+
 export const useStyles = {
     root: {
         minWidth: 120,
+        display: 'flex',
+        flexWrap: 'wrap',
 
         '& .MuiSelect-select': {
             background: '#232323',
