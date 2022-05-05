@@ -4,6 +4,7 @@ from "./ride.types";
 
 const INITIAL_STATE = {
     collection: [],
+    filteredCollection: [],
 }
 
 const rideReducer = (state = INITIAL_STATE, action) => {
@@ -12,6 +13,12 @@ const rideReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 collection: action.payload,
+                filteredCollection: action.payload,
+            };
+        case RideActionTypes.SET_FILTERED_RIDES:
+            return {
+                ...state,
+                filteredCollection: action.payload
             };
 
         default:

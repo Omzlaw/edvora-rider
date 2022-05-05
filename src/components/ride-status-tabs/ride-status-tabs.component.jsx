@@ -11,7 +11,7 @@ import PastRides from "../past-rides/past-rides.component";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectRideCollection } from "../../redux/ride/ride.selector";
+import { selectFilteredRideCollection } from "../../redux/ride/ride.selector";
 import { selectPastRides } from "../../redux/ride/ride.utils";
 import { selectUpcomingRides } from "../../redux/ride/ride.utils";
 import { selectNearestRides } from "../../redux/ride/ride.utils";
@@ -100,7 +100,7 @@ const RideStatusTabs = ({rides, currentUser}) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  rides: selectRideCollection,
+  rides: selectFilteredRideCollection,
   currentUser: selectCurrentUser,
 });
 

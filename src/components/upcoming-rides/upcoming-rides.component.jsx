@@ -4,7 +4,7 @@ import { useStyles } from "./useStyles";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectRideCollection } from "../../redux/ride/ride.selector";
+import { selectFilteredRideCollection } from "../../redux/ride/ride.selector";
 import { selectUpcomingRides } from "../../redux/ride/ride.utils";
 import { selectCurrentUser } from "../../redux/user/user.selector";
 
@@ -27,7 +27,7 @@ const UpcomingRides = ({ rides, currentUser }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  rides: selectRideCollection,
+  rides: selectFilteredRideCollection,
   currentUser: selectCurrentUser,
 });
 

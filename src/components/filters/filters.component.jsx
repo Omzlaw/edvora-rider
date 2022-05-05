@@ -11,10 +11,9 @@ import Dropdown from "../dropdown/dropdown.component";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectRideCollection } from "../../redux/ride/ride.selector";
 import { selectCityCollection, selectStateCollection } from "../../redux/filter/filter.selector";
 
-const Filters = ({rides, states, cities}) => {
+const Filters = ({states, cities}) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -58,7 +57,6 @@ const Filters = ({rides, states, cities}) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  rides: selectRideCollection,
   states: selectStateCollection,
   cities: selectCityCollection
 });

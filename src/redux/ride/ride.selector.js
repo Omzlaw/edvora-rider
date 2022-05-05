@@ -6,3 +6,8 @@ export const selectRideCollection = createSelector(
   [selectRides],
   rides => rides.collection || []
 );
+
+export const selectFilteredRideCollection = createSelector(
+  [selectRides],
+  rides => rides.filteredCollection || []
+);
