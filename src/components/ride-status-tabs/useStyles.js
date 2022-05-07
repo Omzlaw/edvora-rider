@@ -17,6 +17,11 @@ export const useStyles = {
         cursor: 'pointer',
     },
 
+    stationCode: {
+        color: '#ffffff',
+        margin: '30px 0 0 0'
+    },
+
     tabPanel: {
         height: '35rem',
         margin: "24px 52px 30px 16px",

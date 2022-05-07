@@ -3,6 +3,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 import { useStyles } from "./useStyles";
 import NearestRides from "../nearest-rides/nearest-rides.component";
@@ -76,6 +77,7 @@ const RideStatusTabs = ({rides, currentUser}) => {
               <Tab {...a11yProps(1)} label={'Upcoming rides (' + upcomingRidesCount + ')'} />
               <Tab {...a11yProps(2)} label={'Past rides (' + pastRidesCount + ')'} />
             </Tabs>
+            <Typography sx={useStyles.stationCode}>Current station code: {currentUser.station_code}</Typography>
           </Box>
         </Grid>
         <Grid item>
