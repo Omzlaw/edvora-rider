@@ -7,7 +7,15 @@ import { setRides } from "../../redux/ride/ride.actions";
 import { setStates, setCities } from "../../redux/filter/filter.actions";
 import { connect } from "react-redux";
 import { Typography } from "@mui/material";
-import { useStyles } from "./useStyles";
+
+const useStyles = {
+  error: {
+    margin: "31px 0 30px 34px",
+    color: '#ffffff',
+    fontWeight: 'bold',
+    fontSize: '25px',
+  }
+}
 
 const Home = ({
   user,
